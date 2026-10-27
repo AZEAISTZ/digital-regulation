@@ -21,7 +21,7 @@
 ## ไฟล์หลัก
 - `materials/` — สไลด์ต้นฉบับ (ห้ามแก้/ลบ, อยู่ใน .gitignore)
 - `work/` — ข้อความ+ภาพที่ดึงจาก PDF (อยู่ใน .gitignore)
-- `reference/` — โครงเว็บเก่า (index.html, chapter.html มีแต่ HTML, **ไม่มี** assets/css และ assets/js จริง — ต้องสร้าง CSS/JS ใหม่เองตามฟังก์ชันที่ระบุใน BRIEF ไม่ใช่ copy จาก reference)
+- `reference/` — โครงเว็บเก่า **มีไฟล์จริงครบ** (index.html, chapter.html, assets/css/style.css, assets/js/app.js) ใช้เป็นต้นแบบฟังก์ชัน (sticky TOC, ในบทนี้/scroll-spy, scroll-margin, progress bar, search/filter) แต่เปลี่ยนสี/ฟอนต์ตาม design_spec และปรับโครงสร้างข้อมูลจาก toc.json/chapters เป็น modules.json/modules
 - `content/modules/NN-slug.md`, `content/modules.json`, `content/quiz.json`, `content/glossary.json`
 - เว็บ: `index.html`, `module.html`, `quiz.html`, `glossary.html`, `assets/css`, `assets/js`
 
