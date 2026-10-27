@@ -45,6 +45,12 @@ pageEnd: 16
   </g>
 </svg>
 
+<div class="external-box">
+<p class="external-label">ข้อมูลเสริมภายนอก</p>
+<p>ตัวอย่าง "Self-Preferencing" ที่สไลด์ยกขึ้น ปัจจุบันถูกบัญญัติเป็นข้อห้ามทางกฎหมายโดยตรงแล้วในสหภาพยุโรป มาตรา 6(5) ของ Digital Markets Act (DMA) ห้ามมิให้ gatekeeper ให้สิทธิพิเศษแก่สินค้า/บริการของตนเองในการจัดอันดับ (ranking) การจัดทำดัชนี (indexing) และการรวบรวมข้อมูล (crawling) เหนือกว่าสินค้า/บริการของบุคคลที่สาม และต้องใช้เงื่อนไขการจัดอันดับที่โปร่งใส เป็นธรรม และไม่เลือกปฏิบัติ นี่คือตัวอย่างที่ทฤษฎีความเสียหายเชิงเศรษฐศาสตร์ (exclusionary abuse) ถูกแปลงเป็นข้อห้ามเชิงกฎหมายที่ชัดเจนสำหรับผู้ประกอบการที่ถูกกำหนดเป็น gatekeeper</p>
+<p class="external-source">แหล่งที่มา: European Commission, Regulation (EU) 2022/1925 (Digital Markets Act) มาตรา 6(5) — สรุปโดย CERRE, "The Prohibition of Self-Preferencing in the DMA" (พ.ย. 2565) — <a href="https://cerre.eu/wp-content/uploads/2022/11/DMA_SelfPreferencing.pdf" target="_blank" rel="noopener">cerre.eu</a> · ข้อมูล ณ 27 ตุลาคม 2569</p>
+</div>
+
 ## แนวคิดและศัพท์สำคัญ
 
 - **Theory of harm (ทฤษฎีความเสียหาย)** — กรอบอธิบายกลไกที่พฤติกรรมของผู้มีอำนาจเหนือตลาดก่อให้เกิดความเสียหายต่อการแข่งขันหรือผู้บริโภค (สไลด์ น. 15, 16)
