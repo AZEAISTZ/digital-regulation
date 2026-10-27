@@ -67,8 +67,27 @@
   - M04: เกณฑ์ "ผู้มีอำนาจเหนือตลาด" ตามกฎหมายไทย (กขค. มาตรา 50)
   - M05: DMA มาตรา 6(5) ห้าม self-preferencing (CERRE/EU)
   - M07: เกณฑ์ตัวเลขการรวมธุรกิจตามกฎหมายไทย (กขค. มาตรา 51)
-- content/glossary.json: 31 คำศัพท์ (29 จากสไลด์ + 2 จากภายนอก ติดป้าย tag)
+- content/glossary.json: 34 คำศัพท์ (31 จากสไลด์ + 3 จากภายนอก ติดป้าย tag)
 - content/quiz.json: 36 ข้อ (4-5 ข้อ/โมดูล x 8 โมดูล) ผสม mcq/short พร้อมเฉลย+เหตุผลอ้างหน้าสไลด์ ข้อที่มาจากภายนอกติด tag "external" (4 ข้อ)
 
 ## ต่อไป: เฟส 4 — สร้างเว็บ (index.html, module.html, quiz.html, glossary.html, assets/)
+
+### เฟส 4 ✅ — สร้างเว็บ
+- content/modules.json (ข้อมูลบรรยาย + รายการ 8 โมดูล), assets/css/style.css (ปรับจาก reference/ ทั้งหมดตาม design_spec: IDEA Architecture palette, IBM Plex Sans Thai/Looped/Mono, external-box, tag-badge, quiz, glossary), assets/js/app.js (ปรับจาก reference/assets/js/app.js: sticky TOC, ในบทนี้/scroll-spy, scroll-margin, progress bar, ค้นหา/กรอง, badge-ify "(สไลด์ น. X)", quiz scoring, glossary filter)
+- index.html, module.html, quiz.html, glossary.html, README.md, .nojekyll ครบตาม <site>
+
+### เฟส 5 ✅ — QA
+- รันเซิร์ฟเวอร์ python -m http.server 8000 เปิดด้วย Browser pane (ไม่มี playwright-cli ในสภาพแวดล้อมนี้ ใช้ mcp Claude_Browser แทน เพื่อให้ได้ผลลัพธ์เทียบเท่า)
+- ตรวจ console error ทุกหน้า (index, module x8, quiz, glossary) — ไม่พบ error
+- ตรวจผ่าน JS-level: search/filter (index, quiz chips, glossary chips+search), quiz scoring (คลิกคำตอบถูก → state correct, เฉลยแสดง, คะแนนอัปเดต), glossary tag filter (external-only ถูกต้อง), module content fetch (8/8 ไฟล์ 200 OK), page-badge ป้ายหน้าสไลด์ render ถูกต้อง (เช่น module 01 = 16 ป้าย), external-box render ถูกต้องตามโมดูลที่มี (01,02,04,05,07 = 1 กล่อง/โมดูล), pager ก่อนหน้า/ถัดไปถูกต้อง (module 00 ไม่มีก่อนหน้า, module 07 ไม่มีถัดไป)
+- **ข้อจำกัดสภาพแวดล้อม**: ไม่สามารถถ่ายภาพหน้าจอ (screenshot) หรือทดสอบ scroll/scrollIntoView จริงได้ เพราะ Browser pane ไม่ได้ถูกแสดงผล (compositing) ในเซสชันนี้ — เครื่องมือรายงาน "the Browser pane is not displayed" ทุกครั้งที่เรียก screenshot แม้แต่การ scrollTo โดยตรงก็ไม่ขยับ scrollY จึงตรวจ scroll-spy ได้เพียงบางส่วนผ่าน dispatch click (ยืนยันว่า event handler ผูกถูกต้องและ setActive ทำงานได้อย่างน้อย 1 ครั้งที่ทดสอบ) ไม่สามารถยืนยัน regression ภาพหน้าจอที่ 390/1440/1920px ได้ในเซสชันนี้ — แนะนำให้ผู้ใช้เปิด python -m http.server 8000 แล้วทดสอบเองในเบราว์เซอร์จริงเพื่อความมั่นใจสูงสุด
+- รัน /impeccable audit (Evaluate) แล้ว พบ 4 ปัญหาจริง แก้ครบทั้งหมด:
+  1. [P1] module.html ไม่มี `<h1>` จริงในเนื้อหา (มีแต่ document.title) → เพิ่ม `<h1 data-module-title>` + populate จาก JS, ลำดับหัวข้อตอนนี้ H1→H2→H3 ถูกต้อง
+  2. [P2] index.html ไม่มี H2 คั่นระหว่าง H1 กับการ์ด H3 (ลำดับหัวข้อกระโดด) → เพิ่ม H2 "โมดูลทั้งหมด" และ "ทางลัด"
+  3. [P2] `.nav-list a` (ลิงก์สารบัญด้านข้าง) สูงเพียง ~37px ต่ำกว่าเกณฑ์ปุ่มกดได้ขั้นต่ำ 44px ตาม design_spec → แก้เป็น flex + min-height 44px (ตรวจแล้วได้ 58px)
+  4. [P2] ตาราง markdown ในเนื้อหา (เช่น module 04) ไม่มี wrapper ป้องกัน horizontal overflow บนจอแคบ → เพิ่ม `.module-article table { display:block; overflow-x:auto }`
+  5. [P2] `.module-card-meta` และ `.footer-note` ใช้ opacity:0.75 ลดคอนทราสต์ตัวอักษรบนพื้นสี ขัดกับกฎ design_spec "ห้ามใช้ตัวอักษรเทาบนพื้นสี" → เอา opacity ออก ใช้สี ink เต็มทึบ
+  - ตรวจซ้ำหลังแก้ทุกจุดผ่าน Browser pane (console error, DOM, heading order, table overflow, nav tap target) ผ่านหมด
+
+## สถานะ: จบงานหลัก 5 เฟสแล้ว
 </content>
