@@ -1,0 +1,53 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "assets/css/style.css"
+        ],
+        "createdAt": "2026-10-27T14:41:24.759Z",
+        "reason": "user brief design_spec explicitly requires: กล่องข้อมูลเสริมภายนอก เส้นขอบซ้ายสีชมพู (external-box pink left border) — literal spec requirement, not reflexive AI default"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-27T14:41:34.073Z",
+        "reason": "user brief design_spec explicitly specifies this exact hex: พื้นหลัง Off-White #F4F1EA (IDEA Architecture Pantone-derived palette) — literal user-dictated value, not a reflexive safe default"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "module.html"
+        ],
+        "createdAt": "2026-10-27T14:41:34.382Z",
+        "reason": "user brief design_spec explicitly specifies this exact hex: พื้นหลัง Off-White #F4F1EA (IDEA Architecture Pantone-derived palette) — literal user-dictated value, not a reflexive safe default"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "quiz.html"
+        ],
+        "createdAt": "2026-10-27T14:41:34.669Z",
+        "reason": "user brief design_spec explicitly specifies this exact hex: พื้นหลัง Off-White #F4F1EA (IDEA Architecture Pantone-derived palette) — literal user-dictated value, not a reflexive safe default"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "glossary.html"
+        ],
+        "createdAt": "2026-10-27T14:41:34.967Z",
+        "reason": "user brief design_spec explicitly specifies this exact hex: พื้นหลัง Off-White #F4F1EA (IDEA Architecture Pantone-derived palette) — literal user-dictated value, not a reflexive safe default"
+      }
+    ]
+  }
+}

@@ -331,7 +331,6 @@ main { min-width: 0; padding: 0 var(--space-md) var(--space-4xl); }
   border-radius: var(--radius-card);
   text-decoration: none;
   color: var(--color-ink);
-  border-left: 3px solid var(--color-accent);
 }
 .module-card:hover .module-card-title { text-decoration: underline; text-decoration-color: var(--color-accent); }
 
