@@ -179,6 +179,15 @@ function renderArticleBody(container, markdown) {
     wrap.appendChild(table);
   });
 
+  container.querySelectorAll("svg").forEach((svgEl) => {
+    if (svgEl.closest(".diagram-wrap")) return;
+    const wrap = document.createElement("div");
+    wrap.className = "diagram-wrap";
+    svgEl.replaceWith(wrap);
+    wrap.appendChild(svgEl);
+    wrap.insertAdjacentHTML("beforeend", `<p class="diagram-hint">เลื่อนดูด้านข้าง →</p>`);
+  });
+
   const headings = [...container.querySelectorAll("h2")];
   headings.forEach((h, i) => (h.id = `sec-${i}`));
   if (headings.length) {
