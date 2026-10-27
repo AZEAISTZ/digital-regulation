@@ -1,4 +1,4 @@
-import { animate, stagger, onScroll, svg } from "https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.esm.min.js";
+import { animate, svg } from "https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.esm.min.js";
 import { marked } from "https://cdn.jsdelivr.net/npm/marked@12.0.2/lib/marked.esm.js";
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -36,16 +36,28 @@ function initNavToggle() {
   const toggle = document.querySelector("[data-nav-toggle]");
   const rail = document.querySelector("[data-side-rail]");
   if (!toggle || !rail) return;
-  toggle.addEventListener("click", () => {
-    const open = rail.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(open));
+
+  const backdrop = document.createElement("div");
+  backdrop.className = "side-rail-backdrop";
+  document.body.appendChild(backdrop);
+
+  const close = () => {
+    rail.classList.remove("is-open");
+    backdrop.classList.remove("is-visible");
+    toggle.setAttribute("aria-expanded", "false");
+  };
+  const open = () => {
+    rail.classList.add("is-open");
+    backdrop.classList.add("is-visible");
+    toggle.setAttribute("aria-expanded", "true");
+  };
+
+  toggle.addEventListener("click", () => (rail.classList.contains("is-open") ? close() : open()));
+  backdrop.addEventListener("click", close);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && rail.classList.contains("is-open")) close();
   });
-  rail.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => {
-      rail.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-    })
-  );
+  rail.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
 }
 
 function drawHeroRule() {
@@ -56,39 +68,47 @@ function drawHeroRule() {
   animate(drawable, { draw: ["0 0", "0 1"], duration: 600, ease: "outExpo" });
 }
 
+const pendingReveals = new Map(); // el -> running anime instance, or null while still off-screen
+
 function revealOnScroll(elements) {
   if (reduceMotion || !elements.length) return;
-  animate(elements, {
-    opacity: [0, 1],
-    translateY: [16, 0],
-    duration: 400,
-    delay: stagger(60),
-    ease: "outExpo",
-    autoplay: onScroll({ enter: "bottom-=40" }),
+
+  elements.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(16px)";
+    pendingReveals.set(el, null);
   });
 
-  // shortcut: anime's onScroll enter-threshold can be skipped by an instant scroll jump
-  // in one frame, leaving an element stuck at opacity:0 forever — force-reveal as a safety net
-  const revealObserver = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0px)";
-      revealObserver.unobserve(entry.target);
+      observer.unobserve(entry.target);
+      const anim = animate(entry.target, {
+        opacity: [0, 1],
+        translateY: [16, 0],
+        duration: 400,
+        ease: "outExpo",
+        onComplete: () => {
+          entry.target.style.opacity = "";
+          entry.target.style.transform = "";
+          pendingReveals.delete(entry.target);
+        },
+      });
+      pendingReveals.set(entry.target, anim);
     });
   }, { rootMargin: "200px" });
-  elements.forEach((el) => revealObserver.observe(el));
-
-  // shortcut: full-page screenshot tools render beyond the live viewport without scrolling,
-  // so neither trigger above fires — force-reveal everything left hidden after a bounded delay
-  setTimeout(() => {
-    revealObserver.disconnect();
-    elements.forEach((el) => {
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0px)";
-    });
-  }, 1500);
+  elements.forEach((el) => observer.observe(el));
 }
+
+// print should never show half-revealed content, animated or not
+window.addEventListener("beforeprint", () => {
+  pendingReveals.forEach((anim, el) => {
+    anim?.pause();
+    el.style.opacity = "";
+    el.style.transform = "";
+  });
+  pendingReveals.clear();
+});
 
 function moduleCardMarkup(m) {
   return `

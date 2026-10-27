@@ -655,8 +655,19 @@ main { min-width: 0; padding: 0 var(--space-md) var(--space-4xl); }
     transform: translateX(100%);
     transition: transform var(--dur-base) var(--ease-out);
     box-shadow: -4px 0 16px rgba(20, 33, 61, 0.2);
+    z-index: 19;
   }
   .side-rail.is-open { transform: translateX(0); }
+  .side-rail-backdrop {
+    position: fixed;
+    inset: var(--header-h) 0 0 0;
+    background: rgba(20, 33, 61, 0.5);
+    z-index: 18;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-base) var(--ease-out);
+  }
+  .side-rail-backdrop.is-visible { opacity: 1; pointer-events: auto; }
   .hero h1 { font-size: var(--text-2xl); }
 }
 
