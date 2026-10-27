@@ -89,5 +89,13 @@
   5. [P2] `.module-card-meta` และ `.footer-note` ใช้ opacity:0.75 ลดคอนทราสต์ตัวอักษรบนพื้นสี ขัดกับกฎ design_spec "ห้ามใช้ตัวอักษรเทาบนพื้นสี" → เอา opacity ออก ใช้สี ink เต็มทึบ
   - ตรวจซ้ำหลังแก้ทุกจุดผ่าน Browser pane (console error, DOM, heading order, table overflow, nav tap target) ผ่านหมด
 
-## สถานะ: จบงานหลัก 5 เฟสแล้ว
+### แก้บั๊ก (หลังจบเฟส 5): SVG แผนภาพแสดงเป็นโค้ดดิบ
+- สาเหตุ: บรรทัดว่างภายในบล็อก `<svg>...</svg>` ใน content/modules/*.md (02,03,04,05,06) ทำให้ marked ตัด HTML block แล้วอ่านส่วนที่เหลือเป็น code block
+- แก้ที่ต้นเหตุ: assets/js/app.js `renderArticleBody()` ดึงบล็อก `<figure>`/`<svg>` ทั้งก้อนออกมาเก็บไว้ก่อน parse แทนที่ด้วย placeholder บรรทัดเดียวคั่นบรรทัดว่าง parse เสร็จค่อยสลับ SVG เดิมกลับเข้าไปแบบไม่ผ่าน marked เลย — กัน regression อนาคตด้วย ไม่ใช่แค่แก้ไฟล์ที่เจอบั๊ก
+- ลบบรรทัดว่างในบล็อก svg ทุกไฟล์ (work/fix_svg_blank_lines.py) เป็นชั้นป้องกันที่สอง
+- ตรวจ viewBox + width:100%;height:auto ครบทั้ง 6 SVG (module 01-06) อยู่แล้วตั้งแต่แรก
+- ตรวจผ่าน Browser pane ที่ 1440px และ 390px ทั้ง 6 โมดูล: ไม่มี raw code ใน pre/code, จำนวน `<text>` ใน DOM ตรงกับไฟล์ .md เป๊ะทุกโมดูล (01=11,02=9,03=6,04=15,05=12,06=17), ไม่ล้นจอ/ไม่ทับคอลัมน์ "ในบทนี้", console ไม่มี error
+- **ข้อจำกัดซ้ำ**: screenshot ผ่าน Browser pane ยังใช้ไม่ได้ในเซสชันนี้ (pane ไม่ compositing) จึงสกัด SVG แต่ละอันออกมาเป็นไฟล์ `.svg` เดี่ยว (แทนค่า CSS var เป็น hex จริงแล้ว) เก็บไว้ที่ shots/diagrams/module-0X.svg ให้เปิดดูเองในเบราว์เซอร์/โปรแกรมดูภาพแทนภาพ screenshot จริง — การยืนยันว่า "วาดครบ" ใช้วิธีเทียบจำนวน element ใน DOM กับไฟล์ต้นทางแทน (ตรงกันทุกตัว)
+
+## สถานะ: จบงานหลัก 5 เฟสแล้ว + แก้บั๊ก SVG เรียบร้อย
 </content>

@@ -154,7 +154,23 @@ function badgeifyPageCitations(html) {
 
 function renderArticleBody(container, markdown) {
   const body = markdown.replace(/^---[\s\S]*?---\s*/, "");
-  container.innerHTML = marked.parse(body);
+
+  // shortcut: a blank line anywhere inside a raw <figure>/<svg> block makes marked split it
+  // into separate HTML blocks (and indented lines inside it become a code block), corrupting
+  // the diagram — pull each whole block out before parsing and splice the untouched markup
+  // back into the matching placeholder paragraph afterward
+  const diagramBlocks = [];
+  const withPlaceholders = body.replace(/<figure[\s\S]*?<\/figure>|<svg[\s\S]*?<\/svg>/g, (match) => {
+    const i = diagramBlocks.length;
+    diagramBlocks.push(match);
+    return `\n\nDIAGRAMBLOCKPLACEHOLDER${i}\n\n`;
+  });
+
+  let html = marked.parse(withPlaceholders);
+  diagramBlocks.forEach((block, i) => {
+    html = html.replace(new RegExp(`<p>\\s*DIAGRAMBLOCKPLACEHOLDER${i}\\s*</p>`), block);
+  });
+  container.innerHTML = html;
 
   const headings = [...container.querySelectorAll("h2")];
   headings.forEach((h, i) => (h.id = `sec-${i}`));

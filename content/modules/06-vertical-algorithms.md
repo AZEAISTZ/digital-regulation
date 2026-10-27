@@ -37,25 +37,21 @@ pageEnd: 20
     <text x="82" y="62">มนุษย์ตกลงกัน</text>
     <text x="82" y="78">ใช้อัลกอริทึม</text>
     <text x="82" y="94">เป็นเครื่องมือ</text>
-
     <rect x="165" y="20" width="145" height="90" rx="2" fill="var(--color-accent-soft)"></rect>
     <text x="237" y="42" font-weight="700" fill="var(--color-accent)">2. Hub &amp; Spoke</text>
     <text x="237" y="62">ผู้ให้บริการ</text>
     <text x="237" y="78">อัลกอริทึมรายเดียว</text>
     <text x="237" y="94">ร่วมกันหลายบริษัท</text>
-
     <rect x="320" y="20" width="145" height="90" rx="2" fill="var(--color-accent-soft)"></rect>
     <text x="392" y="42" font-weight="700" fill="var(--color-accent)">3. Predictable Agent</text>
     <text x="392" y="62">อัลกอริทึมอิสระ</text>
     <text x="392" y="78">สังเกต-ปรับราคา</text>
     <text x="392" y="94">ตามคู่แข่ง</text>
-
     <rect x="475" y="20" width="155" height="90" rx="2" fill="var(--color-accent-soft)"></rect>
     <text x="552" y="42" font-weight="700" fill="var(--color-accent)">4. Digital Eye</text>
     <text x="552" y="62">เรียนรู้ด้วยตนเอง</text>
     <text x="552" y="78">(Reinforcement</text>
     <text x="552" y="94">Learning)</text>
-
     <text x="320" y="135" font-size="12" font-weight="600">ระดับการมีส่วนร่วมของมนุษย์: สูง → ต่ำ (ซ้ายไปขวา)</text>
   </g>
 </svg>

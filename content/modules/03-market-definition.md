@@ -26,15 +26,12 @@ pageEnd: 12
     <rect x="15" y="55" width="190" height="60" rx="2" fill="var(--color-accent-soft)"></rect>
     <text x="110" y="80">ฝั่งอุปทาน</text>
     <text x="110" y="98" font-size="11">ผู้ขาย / ผู้ลงโฆษณา</text>
-
     <rect x="225" y="40" width="190" height="90" rx="2" fill="var(--color-accent)"></rect>
     <text x="320" y="78" fill="var(--color-accent-ink)">แพลตฟอร์ม</text>
     <text x="320" y="96" font-size="11" fill="var(--color-accent-ink)">กำหนดกฎ + คุมทางเข้าตลาด</text>
-
     <rect x="435" y="55" width="190" height="60" rx="2" fill="var(--color-accent-soft)"></rect>
     <text x="530" y="80">ฝั่งอุปสงค์</text>
     <text x="530" y="98" font-size="11">ผู้อ่าน / ผู้ซื้อ / ผู้เดินทาง</text>
-
     <g stroke="var(--color-accent)" stroke-width="2" marker-end="url(#arrow2)" marker-start="url(#arrow2)">
       <line x1="205" y1="85" x2="223" y2="85"></line>
       <line x1="417" y1="85" x2="433" y2="85"></line>

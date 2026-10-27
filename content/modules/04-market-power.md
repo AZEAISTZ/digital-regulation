@@ -27,28 +27,22 @@ Platform A มีส่วนแบ่งตลาดสูงกว่าแต
   <g font-family="var(--font-display)" font-size="13" fill="var(--color-ink)">
     <text x="130" y="20" text-anchor="middle" font-weight="700" fill="var(--color-accent)">Platform A</text>
     <text x="490" y="20" text-anchor="middle" font-weight="700" fill="var(--color-accent)">Platform B</text>
-
     <text x="20" y="55" font-size="12">ส่วนแบ่งตลาด</text>
     <rect x="130" y="42" width="180" height="18" fill="var(--color-accent-soft)"></rect>
     <rect x="130" y="42" width="108" height="18" fill="var(--color-accent)"></rect>
     <text x="320" y="56" font-size="12">60%</text>
-
     <rect x="400" y="42" width="180" height="18" fill="var(--color-accent-soft)"></rect>
     <rect x="400" y="42" width="72" height="18" fill="var(--color-accent)"></rect>
     <text x="590" y="56" font-size="12">40%</text>
-
     <text x="20" y="100" font-size="12">ผลกระทบเครือข่าย</text>
     <text x="220" y="100" font-size="12" text-anchor="middle">ต่ำ</text>
     <text x="490" y="100" font-size="12" text-anchor="middle" fill="var(--color-ext-ink)">สูง</text>
-
     <text x="20" y="135" font-size="12">ต้นทุนการย้ายค่าย</text>
     <text x="220" y="135" font-size="12" text-anchor="middle">ต่ำ</text>
     <text x="490" y="135" font-size="12" text-anchor="middle" fill="var(--color-ext-ink)">สูง</text>
-
     <text x="20" y="170" font-size="12">พฤติกรรมผู้ใช้</text>
     <text x="220" y="170" font-size="12" text-anchor="middle">Multi-homing</text>
     <text x="490" y="170" font-size="12" text-anchor="middle" fill="var(--color-ext-ink)">Single-homing</text>
-
     <text x="320" y="205" text-anchor="middle" font-size="12" font-weight="600" fill="var(--color-ext-ink)">สรุป: Platform B มีแนวโน้มมีอำนาจเหนือตลาดมากกว่า</text>
   </g>
 </svg>

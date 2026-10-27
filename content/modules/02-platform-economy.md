@@ -35,7 +35,6 @@ pageEnd: 8
       <line x1="275" y1="65" x2="308" y2="65"></line>
       <line x1="420" y1="65" x2="453" y2="65"></line>
     </g>
-
     <text x="20" y="128" font-weight="700" fill="var(--color-accent)">ตลาดดิจิทัล (Digital Platform)</text>
     <g text-anchor="middle" font-size="12">
       <rect x="20"  y="150" width="110" height="40" rx="2" fill="var(--color-accent-soft)"></rect>

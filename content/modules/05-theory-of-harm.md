@@ -34,7 +34,6 @@ pageEnd: 16
     <text x="30" y="98" font-size="11">• เลือกปฏิบัติ / บังคับใช้บริการอื่น</text>
     <text x="30" y="123" font-size="11" font-weight="600">ความเสียหายตรงต่อผู้บริโภค</text>
     <text x="30" y="141" font-size="11">(เช่น ตั้งราคาสูงเกินควร)</text>
-
     <rect x="330" y="10" width="300" height="150" rx="2" fill="var(--color-accent-soft)"></rect>
     <text x="350" y="35" font-size="14" font-weight="700" fill="var(--color-accent)">B. Exclusionary abuses</text>
     <text x="350" y="55" font-size="12">พฤติกรรมกีดกัน/ปิดกั้นคู่แข่ง</text>
