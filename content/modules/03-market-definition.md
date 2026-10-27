@@ -21,28 +21,31 @@ pageEnd: 12
 
 แพลตฟอร์มหลายด้านเชื่อมโยงผู้ใช้งานอย่างน้อย 2 ฝั่ง เช่น ฝั่งอุปทาน/ผู้สนับสนุน (ผู้ลงโฆษณา เจ้าของทรัพย์สิน ผู้ขายสินค้า/บริการ) กับฝั่งอุปสงค์/ผู้ใช้บริการ (ผู้อ่าน/ผู้ใช้บริการ ผู้เดินทาง ผู้ซื้อสินค้า) โดยแพลตฟอร์มเป็นผู้กำหนดกฎเกณฑ์และควบคุมทางเข้าสู่ตลาด สไลด์ยกตัวอย่างคำถามเรื่องขอบเขตตลาดในแพลตฟอร์มหลายด้านผ่าน 3 กรณี ได้แก่ แพลตฟอร์มสื่อ/ค้นหาออนไลน์ (เช่น The New York Times — ตลาดโฆษณาออนไลน์ vs ตลาดบริการข่าวออนไลน์), แพลตฟอร์มที่พักออนไลน์ (เช่น Airbnb — ตลาดบริการที่พักสำหรับเจ้าของที่พัก vs ตลาดจองที่พักสำหรับผู้เดินทาง) และแพลตฟอร์มซื้อขายสินค้าออนไลน์ (เช่น eBay — ตลาดขายสินค้าออนไลน์สำหรับผู้ขาย vs ตลาดซื้อสินค้าออนไลน์สำหรับผู้ซื้อ) โดยตั้งคำถามสำคัญว่าควรกำหนดตลาดแยกตามแต่ละด้าน (individual markets) หรือกำหนดเป็นตลาดเดียวที่รวมทุกด้าน (one relevant market) (สไลด์ น. 11, ที่มา: European University Institute)
 
-<svg viewBox="0 0 640 170" role="img" aria-label="แผนภาพแพลตฟอร์มหลายด้าน" style="width:100%;height:auto;">
+<figure class="diagram-wrap">
+<svg viewBox="0 0 668 170" role="img" aria-label="แผนภาพแพลตฟอร์มหลายด้าน" style="width:100%;height:auto;">
   <g font-family="var(--font-display)" font-size="13" fill="var(--color-ink)" text-anchor="middle">
     <rect x="15" y="55" width="190" height="60" rx="2" fill="var(--color-accent-soft)"></rect>
     <text x="110" y="80">ฝั่งอุปทาน</text>
     <text x="110" y="98" font-size="11">ผู้ขาย / ผู้ลงโฆษณา</text>
-    <rect x="225" y="40" width="190" height="90" rx="2" fill="var(--color-accent)"></rect>
-    <text x="320" y="78" fill="var(--color-accent-ink)">แพลตฟอร์ม</text>
-    <text x="320" y="96" font-size="11" fill="var(--color-accent-ink)">กำหนดกฎ + คุมทางเข้าตลาด</text>
-    <rect x="435" y="55" width="190" height="60" rx="2" fill="var(--color-accent-soft)"></rect>
-    <text x="530" y="80">ฝั่งอุปสงค์</text>
-    <text x="530" y="98" font-size="11">ผู้อ่าน / ผู้ซื้อ / ผู้เดินทาง</text>
+    <rect x="239" y="40" width="190" height="90" rx="2" fill="var(--color-accent)"></rect>
+    <text x="334" y="78" fill="var(--color-accent-ink)">แพลตฟอร์ม</text>
+    <text x="334" y="96" font-size="11" fill="var(--color-accent-ink)">กำหนดกฎ + คุมทางเข้าตลาด</text>
+    <rect x="463" y="55" width="190" height="60" rx="2" fill="var(--color-accent-soft)"></rect>
+    <text x="558" y="80">ฝั่งอุปสงค์</text>
+    <text x="558" y="98" font-size="11">ผู้อ่าน / ผู้ซื้อ / ผู้เดินทาง</text>
     <g stroke="var(--color-accent)" stroke-width="2" marker-end="url(#arrow2)" marker-start="url(#arrow2)">
-      <line x1="205" y1="85" x2="223" y2="85"></line>
-      <line x1="417" y1="85" x2="433" y2="85"></line>
+      <line x1="205" y1="85" x2="237" y2="85"></line>
+      <line x1="431" y1="85" x2="461" y2="85"></line>
     </g>
   </g>
   <defs>
-    <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+    <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto-start-reverse">
       <path d="M0,0 L6,3 L0,6 Z" fill="var(--color-accent)"></path>
     </marker>
   </defs>
 </svg>
+<p class="diagram-hint">เลื่อนดูด้านข้าง →</p>
+</figure>
 
 ### การทำ Market Study ในตลาด E-Commerce Marketplace (สไลด์ น. 12)
 

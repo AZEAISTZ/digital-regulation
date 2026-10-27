@@ -15,8 +15,9 @@ pageEnd: 6
 
 มูลค่าพาณิชย์อิเล็กทรอนิกส์ของไทยเติบโตต่อเนื่องในช่วง 5 ปีล่าสุด (2563–2567): จาก 3.78 ล้านล้านบาทในปี 2563 เป็น 5.17 ล้านล้านบาทในปี 2564, 5.43 ล้านล้านบาทในปี 2565, 5.82 ล้านล้านบาทในปี 2566 และคาดการณ์ 6.13 ล้านล้านบาทในปี 2567 หรือเพิ่มขึ้นประมาณ **62%** ในช่วง 5 ปี เฉลี่ยประมาณ 12–13% ต่อปี (สไลด์ น. 3)
 
-<svg viewBox="0 0 640 300" role="img" aria-label="กราฟแท่งมูลค่า E-Commerce ไทย 2563-2567" style="width:100%;height:auto;font-family:var(--font-mono);">
-  <g font-size="12" fill="var(--color-ink)">
+<figure class="diagram-wrap">
+<svg viewBox="0 0 640 300" role="img" aria-label="กราฟแท่งมูลค่า E-Commerce ไทย 2563-2567" style="width:100%;height:auto;">
+  <g font-size="12" fill="var(--color-ink)" font-family="var(--font-body)">
     <line x1="60" y1="20" x2="60" y2="250" stroke="var(--color-rule)" stroke-width="1"/>
     <line x1="60" y1="250" x2="610" y2="250" stroke="var(--color-rule)" stroke-width="1"/>
     <!-- bars: values 3.78,5.17,5.43,5.82,6.13 scaled to max 8 -->
@@ -27,14 +28,14 @@ pageEnd: 6
       <rect x="420" y="57"  width="70" height="193"></rect>
     </g>
     <rect x="530" y="39" width="70" height="211" fill="var(--color-accent)" opacity="0.6"></rect>
-    <g text-anchor="middle">
+    <g text-anchor="middle" font-family="var(--font-mono)">
       <text x="125" y="135">3.78</text>
       <text x="235" y="84">5.17</text>
       <text x="345" y="71">5.43</text>
       <text x="455" y="50">5.82</text>
       <text x="565" y="32">6.13*</text>
     </g>
-    <g text-anchor="middle">
+    <g text-anchor="middle" font-family="var(--font-mono)">
       <text x="125" y="268">2563</text>
       <text x="235" y="268">2564</text>
       <text x="345" y="268">2565</text>
@@ -44,6 +45,8 @@ pageEnd: 6
     <text x="60" y="14" font-size="11">หน่วย: ล้านล้านบาท (* ปี 2567 เป็นค่าคาดการณ์)</text>
   </g>
 </svg>
+<p class="diagram-hint">เลื่อนดูด้านข้าง →</p>
+</figure>
 
 ที่มา (ตามที่ระบุในสไลด์): สำนักงานพัฒนาธุรกรรมทางอิเล็กทรอนิกส์ (ETDA), "ผลสำรวจมูลค่าพาณิชย์อิเล็กทรอนิกส์ในประเทศไทย" ปี 2563–2566 และสำนักงานสถิติแห่งชาติ, "ตัวชี้วัดเศรษฐกิจไทย 2568" (สไลด์ น. 3)
 

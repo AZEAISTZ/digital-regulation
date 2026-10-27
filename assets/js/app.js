@@ -1,5 +1,5 @@
-import { animate, stagger, onScroll, svg } from "https://cdn.jsdelivr.net/npm/animejs@4/lib/anime.esm.min.js";
-import { marked } from "https://cdn.jsdelivr.net/npm/marked@12/lib/marked.esm.js";
+import { animate, stagger, onScroll, svg } from "https://cdn.jsdelivr.net/npm/animejs@4.5.0/dist/bundles/anime.esm.min.js";
+import { marked } from "https://cdn.jsdelivr.net/npm/marked@12.0.2/lib/marked.esm.js";
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -171,6 +171,13 @@ function renderArticleBody(container, markdown) {
     html = html.replace(new RegExp(`<p>\\s*DIAGRAMBLOCKPLACEHOLDER${i}\\s*</p>`), block);
   });
   container.innerHTML = html;
+
+  container.querySelectorAll("table").forEach((table) => {
+    const wrap = document.createElement("div");
+    wrap.className = "table-scroll";
+    table.replaceWith(wrap);
+    wrap.appendChild(table);
+  });
 
   const headings = [...container.querySelectorAll("h2")];
   headings.forEach((h, i) => (h.id = `sec-${i}`));

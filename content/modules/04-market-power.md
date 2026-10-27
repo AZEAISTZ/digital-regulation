@@ -23,6 +23,7 @@ Platform A มีส่วนแบ่งตลาดสูงกว่าแต
 
 ที่มาของอำนาจเหนือตลาดในตลาดดิจิทัลตามสไลด์ เกิดจากวงจร: ผู้ใช้มากขึ้น (more users) → ข้อมูลมากขึ้น (more data) → อัลกอริทึมดีขึ้น (better algorithm) → บริการดีขึ้น (better service) → ดึงดูดผู้ใช้มากขึ้น (more users) ซึ่งวนกลับไปเสริมความได้เปรียบเดิม โดยมีปัจจัยเสริมคือต้นทุนการย้ายค่าย ภาวะล็อกอิน พฤติกรรม single-homing การกำหนดค่าเริ่มต้นและข้อจำกัดการทำงานร่วมกัน (defaults & interoperability) การประหยัดต่อขนาด/ขอบเขต และระบบนิเวศ (สไลด์ น. 14, ที่มา: European University Institute)
 
+<figure class="diagram-wrap">
 <svg viewBox="0 0 640 220" role="img" aria-label="แผนภาพเปรียบเทียบ Platform A และ Platform B" style="width:100%;height:auto;">
   <g font-family="var(--font-display)" font-size="13" fill="var(--color-ink)">
     <text x="130" y="20" text-anchor="middle" font-weight="700" fill="var(--color-accent)">Platform A</text>
@@ -36,16 +37,18 @@ Platform A มีส่วนแบ่งตลาดสูงกว่าแต
     <text x="590" y="56" font-size="12">40%</text>
     <text x="20" y="100" font-size="12">ผลกระทบเครือข่าย</text>
     <text x="220" y="100" font-size="12" text-anchor="middle">ต่ำ</text>
-    <text x="490" y="100" font-size="12" text-anchor="middle" fill="var(--color-ext-ink)">สูง</text>
+    <text x="490" y="100" font-size="12" text-anchor="middle" font-weight="600" fill="var(--color-accent)">สูง</text>
     <text x="20" y="135" font-size="12">ต้นทุนการย้ายค่าย</text>
     <text x="220" y="135" font-size="12" text-anchor="middle">ต่ำ</text>
-    <text x="490" y="135" font-size="12" text-anchor="middle" fill="var(--color-ext-ink)">สูง</text>
+    <text x="490" y="135" font-size="12" text-anchor="middle" font-weight="600" fill="var(--color-accent)">สูง</text>
     <text x="20" y="170" font-size="12">พฤติกรรมผู้ใช้</text>
     <text x="220" y="170" font-size="12" text-anchor="middle">Multi-homing</text>
-    <text x="490" y="170" font-size="12" text-anchor="middle" fill="var(--color-ext-ink)">Single-homing</text>
-    <text x="320" y="205" text-anchor="middle" font-size="12" font-weight="600" fill="var(--color-ext-ink)">สรุป: Platform B มีแนวโน้มมีอำนาจเหนือตลาดมากกว่า</text>
+    <text x="490" y="170" font-size="12" text-anchor="middle" font-weight="600" fill="var(--color-accent)">Single-homing</text>
+    <text x="320" y="205" text-anchor="middle" font-size="12" font-weight="600" fill="var(--color-accent)">สรุป: Platform B มีแนวโน้มมีอำนาจเหนือตลาดมากกว่า</text>
   </g>
 </svg>
+<p class="diagram-hint">เลื่อนดูด้านข้าง →</p>
+</figure>
 
 <div class="external-box">
 <p class="external-label">ข้อมูลเสริมภายนอก</p>

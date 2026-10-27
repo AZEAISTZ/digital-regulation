@@ -17,6 +17,7 @@ pageEnd: 8
 
 ตลาดดิจิทัล (Digital Platform) มีโครงสร้างแบบแพลตฟอร์มหลายด้าน เชื่อมโยงผู้ขาย (Seller) ↔ แพลตฟอร์ม (Digital Platform) ↔ ผู้บริโภค (Consumer) โดยแพลตฟอร์มทำหน้าที่กำหนดกฎเกณฑ์และควบคุมทางเข้าสู่ตลาด (sets the rules and controls access) ขับเคลื่อนด้วยผลกระทบเครือข่าย (network effects) จนอาจนำไปสู่การรวมตัวของตลาด (market tipping) ใช้ข้อมูลและ AI เป็นสินทรัพย์เชิงยุทธศาสตร์ เกิดรูปแบบการตั้งราคาและการแข่งขันที่ไม่ใช่ราคาอย่างเดียว และสร้างต้นทุนการย้ายค่าย (switching cost) กับภาวะล็อกอิน (lock-in) แพลตฟอร์มยังให้บริการเสริม 4 ด้านหลัก ได้แก่ โฆษณา (Advertising) การชำระเงิน (Payment) โลจิสติกส์ (Logistics) และข้อมูล (Data) (สไลด์ น. 7)
 
+<figure class="diagram-wrap">
 <svg viewBox="0 0 640 230" role="img" aria-label="แผนภาพเปรียบเทียบตลาดดั้งเดิมกับตลาดดิจิทัล" style="width:100%;height:auto;">
   <g font-family="var(--font-display)" font-size="13" fill="var(--color-ink)">
     <text x="20" y="22" font-weight="700" fill="var(--color-accent)">ตลาดดั้งเดิม (Traditional Market)</text>
@@ -50,11 +51,13 @@ pageEnd: 8
     </g>
   </g>
   <defs>
-    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto-start-reverse">
       <path d="M0,0 L6,3 L0,6 Z" fill="var(--color-accent)"></path>
     </marker>
   </defs>
 </svg>
+<p class="diagram-hint">เลื่อนดูด้านข้าง →</p>
+</figure>
 
 ### ความแตกต่างของตลาดดั้งเดิมและตลาดดิจิทัล (สไลด์ น. 8)
 
